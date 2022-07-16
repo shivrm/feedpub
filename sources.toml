@@ -1,0 +1,6 @@
+output = "output.epub"
+order = "date"
+
+[[sources]]
+url = "https://fasterthanli.me/index.xml"
+extract = true

@@ -1,0 +1,15 @@
+{
+	"name": "feed2read",
+	"version": "0.1.0",
+	"description": "Collects articles from an RSS feed and makes an EBook from them",
+	"main": "src/index.js",
+	"type": "module",
+	"author": "shivrm",
+	"license": "MIT",
+	"dependencies": {
+		"epub-gen": "^0.1.0",
+		"node-readability": "^3.0.0",
+		"rss-parser": "^3.12.0",
+		"toml": "^3.0.0"
+	}
+}
