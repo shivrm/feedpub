@@ -1,6 +1,23 @@
-output = "output.epub"
+output = "output.epub" # Specifies the output location for the E-book
+
+# `order` specifies how to orser the items. It can have one of 4 values: `none`, `length`,
+# `date` and `title`. If it is not specified, then `none` will be used as the default.
+#
+# `none`: Use the default order - Items in a source as ordered from oldest to newest,
+#		and the sources are ordered based on the order they appear in `config.toml`
+# `length`: Items are ordered based on the length of their content - from shortest to longest.
+# `date`: Items are ordered from oldest to newest.
+# `title`: Items are ordered based on the alphabetic order of their titles.
 order = "date"
 
 [[sources]]
-url = "https://fasterthanli.me/index.xml"
+url = "https://fasterthanli.me/index.xml" # The URL of the feed
+author = "Amos" # Override the author's name
+title = "Amos does stuff" # Override the feed's title
+# Sometimes, the description supplied in the RSS feed will only contain a part of the content
+# If extract = true is specified, then Feedpub will extract content by scraping the webpage.
 extract = true
+count = 50 # The number of items that should be saved. All items will be saved if not specified.
+
+[[sources]]
+url = "https://xkcd.com/atom.xml"

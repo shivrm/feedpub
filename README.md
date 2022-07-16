@@ -26,32 +26,21 @@ Prerequisites: NodeJS, npm, git
 All configurations are stored in `config.toml`. Each source entry looks like this:
 
 ```toml
-# Lines beginning with # are comments, and will be ignored
-
 [[sources]]
-# The URL of the RSS or Atom feed
-url = "https://fasterthanli.me/index.xml"
-
-# Override the author's name
-author = "Amos"
-
-# Override the feed title
-title = "Amos does stuff"
-
+url = "https://fasterthanli.me/index.xml" # The URL of the feed
+author = "Amos" # Override the author's name
+title = "Amos does stuff" # Override the feed's title
 # Sometimes, the description supplied in the RSS feed will only contain a part of the content
 # If extract = true is specified, then Feedpub will extract content by scraping the webpage.
 extract = true
-
-# How many entries should be saved. By default, all entries are saved.
-count = 50
+count = 50 # The number of items that should be saved. All items will be saved if not specified.
 ```
 All fields except `url` are optional.
 
-`config.toml` also has two other properties:
 
+There are also two other properties:
 ```
-# `output` specifies the output location for the E-book.
-output = "output.epub"
+output = "output.epub" # Specifies the output location for the E-book
 
 # `order` specifies how to orser the items. It can have one of 4 values: `none`, `length`,
 # `date` and `title`. If it is not specified, then `none` will be used as the default.
