@@ -22,7 +22,7 @@ function relToAbs(baseUrl, html) {
 	// that does not start with 'http'
 	const regex = /<(.*?)(src|href)=\"(?!http)(.*?)\"(.*?)>/g;
 
-	return html.replace(regex, (match, p1, p2, p3, p4, offset, string) => {
+	return (html ?? "").replace(regex, (match, p1, p2, p3, p4, offset, string) => {
 		// Replaces p3 (the relative URL) with an absolute URL
 		let url = new URL(p3, baseUrl).href;
 		return `<${p1}${p2}="${url}"${p4}>`
